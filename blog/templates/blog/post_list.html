@@ -8,11 +8,11 @@
 	<div>
 		<h1>Blog title here</h1>
     </div>
-	<div>
-		<h2>Post title</h2>
-    </div>
-    <div>
-    	<p>Blog post content here.</p>
-    </div>
+	{% for post in posts %}
+		<div>
+		<p>published: {{ post.published_date }}</p>
+		<h2><a href ="">{{ post.title }}</a></h2>
+		<p>{{ post.text | linebreaks }}
+	{% endfor %}
 </body>
 </html>
